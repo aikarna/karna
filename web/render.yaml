@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: karna-api
+    rootDir: server
+    env: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: node index.js
+    healthCheckPath: /status
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: EXECUTE_SIGNALS
+        value: "true"
+      - key: LIVE_ALL
+        value: "true"
+      - key: LIVE_CHALLENGE
+        value: "true"
+      - key: TV_WEBHOOK_SECRET
+        sync: false
+      - key: BINANCE_KEY
+        sync: false
+      - key: BINANCE_SECRET
+        sync: false
+      - key: BYBIT_KEY
+        sync: false
+      - key: BYBIT_SECRET
+        sync: false
+      - key: ALLOW_ORIGIN
+        value: "*"
+
+  - type: static
+    name: karna-web
+    rootDir: web
+    buildCommand: |
+      npm ci
+      npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API
+        value: https://karna-api.example.com

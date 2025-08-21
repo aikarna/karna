@@ -1,0 +1,3 @@
+{"plan":"all","side":"long","signal":"KARNA_LONG","symbol":"BTCUSD","timeframe":"15","cost":5,"ts":"2025-08-21T01:05:49.862Z","executed":true}
+{"plan":"all","side":"long","signal":"KARNA_LONG","symbol":"BTCUSD","timeframe":"15","cost":5,"ts":"2025-08-21T01:21:00.146Z","executed":true}
+{"plan":"challenge","side":"short","signal":"KARNA_SHORT","symbol":"BTCUSD","timeframe":"15","cost":5,"ts":"2025-08-21T01:21:00.158Z","executed":true}
